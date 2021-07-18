@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "SqlServerConnection": "",
+    "LinkGamer": "server=mysqlawsmomo.cyveqhehh7ab.sa-east-1.rds.amazonaws.com;uid=root;pwd=4456;database=TvApi"
+  }
+}
