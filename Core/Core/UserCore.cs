@@ -6,6 +6,9 @@ using System.Net;
 using LinkGamer.Domain.Entities;
 using LinkGamer.Models;
 using BC = BCrypt.Net.BCrypt;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System;
 
 namespace Core
 {
@@ -71,6 +74,22 @@ namespace Core
             }
             
 
+        }
+
+        public async Task<LinkGamerResult> GetLogin(int id)
+        {
+            try
+            {
+
+                User user = await _Repository.SelectFirstAsync(s => s.Id == id);
+
+                return new LinkGamerResult(HttpStatusCode.OK, true, user);
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
